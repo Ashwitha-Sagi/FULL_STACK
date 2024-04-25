@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1(){
+            let a=t1.value;
+            let b=t2.value;
+            let c=t3.value;
+            if(a>b && a>c){
+                lbl.innerHTML=a;
+            }
+            else if(b>a && b>c)
+            {
+                lbl.innerHTML= b;
+            }
+            else
+            {
+                lbl.innerHTML=c;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p><input type="number" id="t1"/></p>
+    <p><input type="number" id="t2"/></p>
+    <p><input type="number" id="t3"/></p>
+    <button onclick="f1()">Submit</button>
+    <p><label id="lbl"></label></p>
+</body>
+</html>
