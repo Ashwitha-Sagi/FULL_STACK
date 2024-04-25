@@ -9,18 +9,21 @@
             let a=t1.value;
             let b=t2.value;
             if(a==b){
-                lbl.innerHTML="Shape is square";
+                lbl.innerHTML="It is a square";
             }
             else
             {
-                lbl.innerHTML="Shape is not a square";
+                lbl.innerHTML="It is not a square";
             }
         }
     </script>
 </head>
 <body>
-    <p>check if it is square or not.</p>
+    <p style="font-weight: bold;">check if it is square or not.</p>
+    <hr>
+    <p>Enter the value of length</p>
     <p><input type="number" id="t1"></p>
+    <p>Enter the value of width</p>
     <p><input type="number" id="t2"></p>
     <button onclick="f1()">Submit</button>
     <p><label id="lbl"></label></p>

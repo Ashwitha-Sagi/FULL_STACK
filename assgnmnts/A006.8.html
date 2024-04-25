@@ -15,30 +15,26 @@
             let sub = (a, b) => a - b;
             let mul = (a, b) => a * b;
             let div = (a, b) => a / b;
-            // let expo = (a, b) => a ** b;
             result = add(a, b);
-            document.write(result);
-            // lbl.innerHTML=result;
+            document.write(`Addition of ${a} and ${b} is `+result);
             document.write("<br>");
             result = sub(a, b);
-            document.write(result);
+            document.write(`Subtraction of ${a} and ${b} is `+result);
             document.write("<br>");
             result = mul(a, b);
-            document.write(result);
+            document.write(`Multiplication of ${a} and ${b} is `+result);
             document.write("<br>");
-            // result = expo(a, b);
-            // document.write(result);
-            // document.write("<br>");
             result = div(a, b);
-            document.write(result);
+            document.write(`Division of ${a} and ${b} is `+result);
         }
     </script>
 </head>
 <body>
-    <p>Calci</p>
+    <p style="font-weight: bold;">Calculator</p>
+    <hr>
     <p><input type="number" id="t1"></p>
     <p><input type="number" id="t2"></p>
     <button onclick="f1()">Submit</button>
-    <!-- <p><label id="lbl"></label></p> -->
+    <p><label id="lbl"></label></p>
 </body>
 </html>

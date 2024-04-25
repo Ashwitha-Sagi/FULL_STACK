@@ -10,21 +10,22 @@
             let b=t2.value;
             let c=t3.value;
             if(a>b && a>c){
-                lbl.innerHTML=`${a} is greater`;
+                lbl.innerHTML=`${a} is greater than ${b},${c}`;
             }
             else if(b>a && b>c)
             {
-                lbl.innerHTML= `${b} is greater`;
+                lbl.innerHTML= `${b} is greater than ${a},${c}`;
             }
             else
             {
-                lbl.innerHTML=`${c} is greater`;
+                lbl.innerHTML=`${c} is greater than ${a},${b}`;
             }
         }
     </script>
 </head>
 <body>
-    <p>Greatest of 3 numbers</p>
+    <p style="font-weight: bold;">Greatest of 3 numbers</p>
+    <hr>
     <p><input type="number" id="t1"/></p>
     <p><input type="number" id="t2"/></p>
     <p><input type="number" id="t3"/></p>
