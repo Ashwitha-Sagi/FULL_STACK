@@ -12,8 +12,9 @@
             let sub = (a, b) => a - b;
             let mul = (a, b) => a * b;
             let div = (a, b) => a / b;
-            let result = add(a, b);
+            result = add(a, b);
             document.write(result);
+            // lbl.innerHTML=result;
             document.write("<br>");
             result = sub(a, b);
             document.write(result);
@@ -31,6 +32,6 @@
     <p><input type="number" id="t2"></p>
     <!-- <p><input type="operation" ></p> -->
     <button onclick="f1()">Submit</button>
-    <!-- <p><label id="lbl"></label></p> -->
+    <p><label id="lbl"></label></p>
 </body>
 </html>
