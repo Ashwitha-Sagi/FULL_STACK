@@ -6,24 +6,18 @@
     <title>Facebook Login</title>
     <script>
 
-    const signup = document.getElementById('signup');
-
-    const page1 = document.querySelector('.fac-logo');
-
-    const page2 = document.querySelector('.Sign-up');
-
-    const login = document.getElementById('login');
-
-
-    signup.addEventListener("click", () => {
-        page1.classList.add('hide');
-        page2.classList.add('show');
-    });
-
-    login.addEventListener("click", () => {
-        page1.classList.remove('hide');
-        page2.classList.remove('show');
-    });
+function showsignup() {
+        let div = document.getElementById("hiddendiv");
+        let div1 = document.getElementById("mainid");
+        div.style.visibility = "visible";
+        div1.style.opacity = 0.35;
+      }
+      function closethis() {
+        let kk = document.getElementById("hiddendiv");
+        let pp = document.getElementById("mainid");
+        kk.style.visibility = "hidden";
+        pp.style.opacity = 1;
+      }
    </script>
 
    
@@ -52,18 +46,19 @@
             margin-top: 30px;
             width:600px;
         }
-        img{
+        .fb{
 
             height:106px;
             width: 345px;;
-            margin: -28px;
+            margin: -27px;
             overflow-clip-margin: content-box;
             overflow: clip; 
             /* margin-top: 120px; */
+            margin-left: -38px;
         }
         h2{
-            margin-left:15px;
-            width:540px;
+            margin-left:18px;
+            width:520px;
             font-family:sans-serif;
             font-size: 28px ;
             font-weight:100;
@@ -99,7 +94,7 @@
             font-size: 18px;
             padding: 5px;
         }
-        .b2{
+        .b{
             width: 50%;
             height: 50px;
             font-weight: 600;
@@ -124,40 +119,124 @@
         h3 span {
             font-weight: 600;
         }
-        .Sign-up{
+
+        #hiddendiv {
+            z-index: 1002;
+            position: relative;
+            visibility: hidden;
+        }
+        .signup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100dvh;
+            width: 100dvw;
+            position: top;
+            top: 20;
+            left: 0;
+            background-color: rgba(245, 245, 245, 0.507);
+            z-index: 1;
+        }
+        .centerdiv {
+            margin: 100px 0px 60px 0px;
+            background: transparent;
+            width: 25rem;
+            height: 510px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .textdiv {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+        }
+        img {
+          height:106px;
+            width: 345px;;
+            margin: -27px;
+            overflow-clip-margin: content-box;
+            overflow: clip; 
+            /* margin-top: 120px; */
+            margin-left: -38px;
+        }
+        .head {
+          position: relative;
+      }
+
+      .head .cross {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          font-size: 28px;
+          color: #333;
+          cursor: pointer;
+
+      }
+
+      .head p {
+          font-size: 14px;
+          color: gray;
+      }
+
+      .fns {
+          display: flex;
+      }
+      .fns input {
+          margin-left: 5px;
+          width: 60%;
+          height: inherit;
+      }
+      .noname input {
+          width: 96%;
+          margin-left: 0px;
+          height: inherit;
+        }
+        input {
+            width: 100%;
+            height: 45px;
+            margin-bottom: 10px;
+            padding: 0 15px;
+            color: #333;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            padding:15px;
-            background-color:#fff;
-            width:350px;
-            height: 450px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-       }
-       .sign-b1 .input [type=text]{
-            border:none;
-            padding:3px;
-            height: 20px;
-       }
-       p{
-        font-size: 10px;
-        font-family:Arial, Helvetica, sans-serif;
-       }
-       h3{
-        font-family: Arial, Helvetica, sans-serif;
-       }
-       .signtext{
-        font-size: 15px;
-        background-color: transparent;
-        font-family: Arial, Helvetica, sans-serif;
-       }
+            font-size: 14px;
+        }
+
+         input::placeholder {
+            font-size: 14px;
+            color: rgb(168, 167, 167);
+        }
+
+         input:focus {
+            outline: none;
+        }
+
+         /* .name, */
+        .text,
+        .password,
         .dob,
-        .gender {
+         .gender {
+            padding: 0;
+            font-size: 13px;
+        }
+
+        .text input {
+            width: 46%;
+            margin: 2px 5px;
+        }
+
+         .dob,
+         .gender {
             display: flex;
             align-items: end;
             position: relative;
             height: 50px;
         }
-        .dob label,
-        .gender label {
+
+         .dob label,
+         .gender label {
             font-size: 13px;
             color: #333;
             margin: 5px 0;
@@ -166,12 +245,14 @@
             top: -2px;
             left: 5px;
         }
+
         .dob span {
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: end;
         }
+
         .dob span select {
             width: 32%;
             height: 30px;
@@ -182,17 +263,21 @@
             border-radius: 5px;
             font-size: 14px;
         }
+
         .dob span select:focus {
             outline: none;
         }
+
         .gender label {
             top: -7px;
         }
-        .gender {
+
+         .gender {
             width: 100%;
             display: flex;
             justify-content: space-around;
         }
+
         .gender span {
             width: 32%;
             height: 35px;
@@ -216,7 +301,7 @@
             font-size: 14px;
         }
 
-        .button {
+        /* .button {
             width: 45%;
             height: 35px;
             font-weight: 600;
@@ -229,15 +314,23 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 1rem;
+        } */
+        h2 {
+            margin: 0px;
+            font-weight: bold;
         }
-
+        .propertext p {
+            margin-top: 10px;
+        }
+            
 
     </style>
 </head>
 <body>
+    <div id="mainid" >
     <div id="page1" class="main">
         <div class="fac-logo">
-            <img src="../images/fb-logo.svg"><br><br>
+            <img src="../images/fb-logo.svg" class="fb"><br><br>
             <h2>Facebook helps you connect and share with the people in your life.</h2>
         </div>
         <div class="login">
@@ -245,30 +338,37 @@
                 <br><br>
                 <input type="password" placeholder="Password"><br><br>
                 <button>Log in</button><br><br>
-                <center><a  href="#" >Forgotten password ?</a><br></center><br>
+                <center><a  href="" >Forgotten password ?</a><br/></center><br>
                 <hr>
                 <br>
-                <center><button type="button" class="b2" id="signup">Create new Account</button></center><br>
+                <center><button type="button" onclick="showsignup()" class="b">Create new Account</button></center>
                 <h3><span>Create a Page</span> for a celebrity, band or business.</h3>
     </div>
     </div>
-        <div id="page2" class="Sign-up">
-            <h2 style="background-color: transparent;">Sign Up</h2>
-            <div class="signtext">It's quick and easy</div>
-            <!-- <span class="material-symbols-outlined cross" id="login">
-                close
-            </span> -->
-            <hr>
-            <div class="sign-b1">
-                <input type="text" placeholder="First name">
-                <input type="text" placeholder="Surname">
+    </div>
+       
+    <div id="hiddendiv">
+        <div id="signupdiv" class="signup">
+          <div class="centerdiv">
+            <div class="textdiv">
+              <div class="head">
+                <h2>Sign Up</h2>
+                <p>It's quick and easy</p>
+              </div>
+              <div onclick="closethis()" style="cursor: pointer" id="icon">
+                <img src="../images/wrong.png" alt="" class="image-with-class">
+              </div>
             </div>
-            <div class="sign-b2">
-                <input type="email" placeholder="Mobile number or email address">
-                <input type="password" placeholder="New Password">
-                
+            <hr />
+            <div class="noname">
+              <div class="fns">
+                <input type="text" autofocus placeholder="First name"/>
+                <input type="text" placeholder="Surname" />
+              </div>
+              <br>
+              <input type="text" placeholder="Mobile number or email address" /><br>
+              <input type="password" placeholder="New password" name="" id="" /><br>
             </div>
-        <div class="sign-b3">
             <p class="dob">
                 <label for="dob">Date of birth</label>
                 <br />
@@ -347,16 +447,6 @@
                     <option value="1997">1997</option>
                     <option value="1996">1996</option>
                     <option value="1995">1995</option>
-                    <option value="1995">1994</option>
-                    <option value="1995">1993</option>
-                    <option value="1995">1992</option>
-                    <option value="1995">1991</option>
-                    <option value="1995">1990</option>
-                    <option value="1995">1989</option>
-                    <option value="1995">1988</option>
-                    <option value="1995">1987</option>
-                    <option value="1995">1986</option>
-                    <option value="1995">1985</option>
                   </select>
                 </span>
               </p>
@@ -372,11 +462,20 @@
                   Custom<input type="radio" name="gender" id="gender" required />
                 </span>
               </p>
+              <br>
+              <p style="color: grey;">
+                people who use our service may have uploaded your contact
+                information to Facebook. <a href="#">Learn more.</a>
+              </p>
+              <br>
+              <p style="color: grey;">
+                By clicking Sign Up, you agree to our <a href="#">Terms</a>,
+                <a href="#">Data Policy</a> and <a href="#">Cookie Policy</a>. You
+                may receive SMS notifications from us and can opt out at any time.
+              </p>
+              <br>
+              <button type="submit" style="background-color: #42B72A;">Sign Up</button>
+            </div>
+          </div>
         </div>
-        <p>People who use our service may have uploaded your contact information to Facebook. <a href="#">Learn more</a>.
-        </p>
-        <P>By clicking Sign Up, you agree to our <a href="#">Terms</a>,<a href="#"> Privacy Policy </a>and <a href="#">Cookies Policy.</a> You may receive SMS notifications from us and can opt out at any time.</P>
-        <button type="submit">Sign Up</button>
-    </div>
-</body>
-</html>
+      </div>
