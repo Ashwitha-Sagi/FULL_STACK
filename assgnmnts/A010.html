@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FB-Login</title>
+    <script>
+
+    const login = document.getElementById('login');
+
+    const mail = document.getElementById('email');
+
+    const pwd = document.getElementById('password');
+
+    const form = document.querySelector('.login');
+
+    const welcome = document.querySelector('.welcome-box');
+
+    const submit = document.getElementById('submit');
+
+    const display = document.getElementById('display');
+
+    submit.addEventListener("click", (e) => {
+    e.preventDefault();
+    if(mail.value === "john@gmail.com" && pwd.value ==="1234"){
+        form.classList.add('hide');
+        welcome.classList.add('welcome');
+        display.innerHTML = ("Welcome John");
+    } else{
+        form.classList.add('hide');
+        welcome.classList.add('welcome');
+        display.style.color = "red";
+        display.innerHTML = ("Access Denied");
+    }
+});
+    </script>
+    <style>
+        *{
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            display:flex;
+            justify-content: space-evenly;
+            font-family: 'Poppins', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            height: 100dvh;
+             width: 100dvw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .fac-logo{
+            margin-top: 30px;
+            width:600px;
+        }
+        .fb{
+
+            height:106px;
+            width: 345px;;
+            margin: -27px;
+            overflow-clip-margin: content-box;
+            overflow: clip; 
+            /* margin-top: 120px; */
+            margin-left: -38px;
+        }
+        h2{
+            margin-left:18px;
+            width:520px;
+            font-family:sans-serif;
+            font-size: 28px ;
+            font-weight:100;
+            color:#0c0c0c;
+        }
+        .login{
+            margin-top: 60px;
+            background-color:#fff;
+            border: 1px solid #fff;
+            height: 350px;
+            width:400px;
+            padding:15px;
+            border-radius:8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type=email ], [type=password]{
+            height:48px;
+            width:94%;
+            border: 0.25px solid #ccc;
+            border-radius: 3px;
+            padding: 5px;
+            font-size: 16px;
+            color:#333;
+            background-color: transparent;
+        }
+       
+        .login form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login form input {
+            width: 100%;
+            height: 52px;
+            margin-bottom: 10px;
+            padding: 0 15px;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .login form input::placeholder {
+            font-size: 1rem;
+            color: rgb(168, 167, 167);
+        }
+
+        .login form input[type="submit"] {
+            width: 100%;
+            height: 50px;
+            font-weight: 600;
+            background: #0866FF;
+            color: #fff;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .login form input[type="submit"]:hover {
+            background: #0a53b0;
+        }
+        .b{
+            width: 50%;
+            height: 50px;
+            font-weight: 600;
+            background: #42B72A;
+            color: #fff;
+            margin: auto;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        a{
+            text-align: center;
+        }
+        h3 {
+            font-size: .9rem;
+            font-weight: 500;
+            color: #333;
+            margin: 20px 0;
+        }
+        h3 span {
+            font-weight: 600;
+        }
+        .welcome-box {
+            display: none;
+        }
+
+         .welcome-box.welcome {
+            height: 50%;
+            display: flex;
+            text-align: center;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            width: 70%;
+            background-color: #fff;
+            border: 1px solid #fff;
+            border-radius: 8px;
+            padding: 15px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-box p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #1e71ff;
+            margin-bottom: 10px;
+        }
+
+        .welcome-box p span {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #6e34ff;
+        }
+
+        .welcome-box h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0866FF;
+        }
+</style>
+</head>
+<body>
+    <div id="mainid" >
+        <div id="page1" class="main">
+            <div class="fac-logo">
+                <img src="../images/fb-logo.svg" class="fb"><br><br>
+                <h2>Facebook helps you connect and share with the people in your life.</h2>
+            </div>
+            <div class="login">
+                    <form action="">
+                    <input type="email" placeholder="Email adress or phone number"><br>
+                    <input type="password" placeholder="Password"><br>
+                    <input type="submit" value="Log in" id="submit" /><br>
+                    </form>
+                    <center><a  href="" >Forgotten password ?</a><br/></center><br>
+                    <hr>
+                    <br>
+                    <center><button type="button" class="b">Create new Account</button></center>
+                    <div class="welcome-box">
+                        <h3 id="display">Welcome to Facebook</h3>
+                    </div>
+                    <h3><span>Create a Page</span> for a celebrity, band or business.</h3>
+        </div>
+        </div>
+        </div>
+         
+</body>
+</html>
